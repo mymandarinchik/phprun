@@ -1,0 +1,11 @@
+uid
+id
+uid_vk
+uid_ok
+uid_fb
+name
+first_name
+last_name
+photo
+country
+bdate

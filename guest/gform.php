@@ -6,6 +6,56 @@ function go_auth($data) {
     go('profile');
 }
 
+function go_auth_soc($data) {
+    foreach ($data as $key => $value) 
+        $_SESSION[$key] = $value;
+
+    header('Location: user/'.$data['id']);
+}
+
+function GoSingUp($data){
+
+    if ($data['uid_vk']) {
+        $result = mysql_query("SELECT * FROM users WHERE `vk_id` = '$data[uid_vk]'") or die(mysql_error()); 
+        if (mysql_num_rows($result)!=0){//не новый пользователь --> обновляет если надо бд
+            mysql_query('UPDATE `users` SET `name` = "'.$data[first_name].'", `sur_name` = "'.$data[last_name].'", `year_birth` = "'.$data[bdate].'", `avatar` = "'.$data[photo].'" WHERE `vk_id` = "'.$data['uid_vk'].'"') or die(mysql_error());
+            $data['id']= mysql_fetch_assoc($result)[id];
+            go_auth_soc($data);
+        } else {//новый пользователь --> заносим в БД
+            mysql_query('INSERT INTO `users` (`name`, `sur_name`, `year_birth`, `avatar`, `vk_id`, `reg_date`) VALUES ("'.$data[first_name].'", "'.$data[last_name].'", "'.$data[bdate].'", "'.$data[photo].'", "'.$data[uid_vk].'", NOW())') or die(mysql_error());
+            $result = mysql_query("SELECT `id` FROM users WHERE `vk_id` = '$data[uid_vk]'") or die(mysql_error()); 
+            $data['id']= mysql_fetch_assoc($result)[id];
+            go_auth_soc($data);
+        }
+        
+    } else if ($data['uid_ok']) {
+        $result = mysql_query("SELECT * FROM users WHERE `vk_ok` = '$data[uid_vk]'") or die(mysql_error()); 
+        if (!empty($result)){//не новый пользователь --> обновляет если надо бд
+            
+        } else {//новый пользователь --> заносим в БД
+
+        }
+    } else if ($data['uid_fb']) {
+        $result = mysql_query("SELECT * FROM users WHERE `vk_fb` = '$data[uid_vk]'") or die(mysql_error()); 
+        if (!empty($result)){//не новый пользователь --> обновляет если надо бд
+            
+        } else {//новый пользователь --> заносим в БД
+
+        }
+    } else {
+        echo "Error auth";
+    }
+    
+    
+    $data['name'];
+    $data['first_name'];
+    $data['last_name'];
+    $data['photo'];
+    $data['country'];
+    $data['bdate'];
+}
+
+
 if ($_POST['login_f']) {
     email_valid();
     captcha_valid();

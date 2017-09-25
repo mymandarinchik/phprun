@@ -141,11 +141,14 @@ function group( $group_u ) {
     }
 }
 function u_avatar( $avatar ) {
-    if (!empty($avatar)) {
-    echo '<div class="u_avatar"><img src="/assets/img/avatars'.$avatar.'.jpg" alt="avatar"></div>';
+    if($_SESSION['photo']){
+        echo '<div class="u_avatar"><img src="'.$_SESSION[photo].'" alt="avatar"></div>';
     } else {
         echo '<div class="u_avatar"><img src="/assets/img/avatars/avatar.jpeg" alt="avatar"></div>';
     }
+    /*else if (!empty($avatar)) {
+    echo '<div class="u_avatar"><img src="/assets/img/avatars'.$avatar.'.jpg" alt="avatar"></div>';
+    }*/
 }
 function u_init($name, $sur_name) {
     if (!empty($name or $sur_name)) {
