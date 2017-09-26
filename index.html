@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+	<header>Header</header>
+	<main>
+		<article id='profile-avatar'>Here is the avatar</article>
+		<article id='info-block'>
+			<button id='load'>Show friends</button>
+			<ul></ul>
+		</article>
+	</main>
+	<footer>Footer</footer>
+<style>
+	header, main, footer {
+		width: 800px;
+		margin: -8px;
+	}
+	header, footer {
+		height: 85px;
+		background: lightsteelblue;
+	}
+	footer {
+		position: fixed;
+		bottom: 8px;
+		left: 8px;
+	}
+	main {
+	}
+	main #profile-avatar {
+		display: inline-block;
+		width: 200px;
+		height: 200px;
+		background: lightgrey;
+	}
+	main #info-block {
+		display: inline-block;
+		float: right;
+		width: 600px;
+		height: 450px;
+		background: lightgreen;
+		padding-bottom: 50px;
+		overflow: auto;
+	}
+	ul {
+		list-style: none;
+	}
+	li {
+		margin-bottom: 15px;
+	}
+	a {
+		text-decoration: none;
+		color: #000;
+		display: flex;
+		align-items: center;
+	}
+	h4 {
+		margin: 0;
+	}
+	img {
+		border-radius: 50%;
+		width: 100px;
+		height: 100px;
+		margin-right: 20px;
+	}
+</style>
+<script src='jquery-3.2.1.min.js'></script>
+<script>
+
+	$('#load').on('click', loadFriends);
+
+	function getUrl(method, params) {
+		if (!method) throw new Error('Вы не указали метод!');
+		params = params || {};
+		params['access_token'] = '552b3e88c3d86f8d2550203bb664d59ecefcfaf8aed02363c4a9acf59a90d529015ee4eae7bd5e14930ea';
+		return 'https://api.vk.com/method/' + method + '?' + $.param(params);
+	}
+	
+	
+	function sendRequest(method, params, func) {
+		$.ajax({
+			url: getUrl (method, params),
+			method: 'GET',
+			dataType: 'JSONP',
+			success: func
+		});
+	}
+
+	
+	function loadFriends() {
+		sendRequest('friends.search', {count: 142, fields: 'photo_100,online'}, function (data) {
+			drawFriends(data.response);
+		});
+	}
+	
+	function drawFriends(friends) {
+		var html = '';
+		
+		for (var i = 1; i < friends.length; i++) {
+			var f = friends[i];
+			var online = f.online ? 'online' : 'offline';
+			
+			html +=
+			'<li>'+
+				'<a target="_blank" href="https://vk.com/id'+f.uid+'">'
+					+'<img src="'+f.photo_100+'" />'
+					+'<div>'
+						+'<h4>'+ f.first_name + ' ' +f.last_name +'</h4>'
+						+'<p>'+online+'</p>'
+						+'<button>Text this user</button>'
+					+'</div>'
+				+'</a>'
+			+'</li>';
+		}
+		
+		$('ul').html(html);
+	}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
