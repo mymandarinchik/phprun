@@ -15,7 +15,7 @@ top('Вход');
 
 <a href="https://oauth.vk.com/authorize?client_id=<?=ID?>&display=page&redirect_uri=<?=URL?>&response_type=code" target="_blank">Login Vk</a>
 
-<br><a href="https://www.facebook.com/v2.10/dialog/oauth?client_id=<?=ID_FB?>&redirect_uri=<?=URL_FB?>&response_type=code&scope=public_profile,email,user_location" target="_blank">Login FB</a>
+<br><a href="https://www.facebook.com/v2.10/dialog/oauth?client_id=<?=ID_FB?>&redirect_uri=<?=URL_FB?>&response_type=code&scope=public_profile,email,user_location,user_birthday" target="_blank">Login FB</a>
 
 <br><a href="https://connect.ok.ru/oauth/authorize?client_id=<?=ID_OK?>&scope=VALUABLE_ACCESS&response_type=code&redirect_uri=<?=URL_OK?>" target="_blank">Login OK</a>
 <? bottom() ?>

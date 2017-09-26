@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Сен 25 2017 г., 21:02
+-- Время создания: Сен 26 2017 г., 21:46
 -- Версия сервера: 5.5.53-log
 -- Версия PHP: 5.6.29
 
@@ -416,9 +416,9 @@ CREATE TABLE `users` (
   `year_birth` text NOT NULL,
   `group_u` int(1) NOT NULL,
   `reg_date` text NOT NULL,
-  `vk_id` int(11) NOT NULL,
-  `fb_id` int(11) NOT NULL,
-  `ok_id` int(11) NOT NULL
+  `vk_id` varchar(20) NOT NULL,
+  `fb_id` varchar(20) NOT NULL,
+  `ok_id` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -426,13 +426,14 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `nickname`, `email`, `password`, `protected`, `name`, `sur_name`, `avatar`, `country`, `year_birth`, `group_u`, `reg_date`, `vk_id`, `fb_id`, `ok_id`) VALUES
-(1, 'blueKIT', 'tolik-tolik-99@mail.ru', '1a9058647f28ac1402a12963d9aa58b3', 0, '', '', '', '', '', 0, '', 0, 0, 0),
-(2, 'joskyPasan', 'ya.tolik-a@yandex.ru', '4297f44b13955235245b2497399d7a93', 0, 'Толяша', 'Антоненко', '/1/2', 'Russian', '1999', 1, '', 0, 0, 0),
-(3, 'mymandarinchik', 'mandarin.tolik.99@gmail.ru', '4297f44b13955235245b2497399d7a93', 0, 'Анатолий', 'Антоненко', '/1/3', 'Канада', '1999', 2, '', 0, 0, 0),
-(4, 'anko', 'qweqwe@qweqw.qwe', '4297f44b13955235245b2497399d7a93', 0, 'Егор', '', '', '', '', 0, '2017-02-04 14:01:45', 0, 0, 0),
-(5, 'InShala', 'a.tolik-aa@yanadex.ru', 'ad2c5a7094b9388c982df7649a44a637', 0, '', '', '', '', '', 0, '2017-05-14 02:19:09', 0, 0, 0),
-(8, 'panchoVilla', 'dolby.crack@fail.com', '4297f44b13955235245b2497399d7a93', 0, '', '', '', '', '', 0, '2017-07-02 14:12:10', 0, 0, 0),
-(9, 'qwerqqq', 'qweqweqwe.rty', 'qwer', 0, 'Имя', 'Фамилия', 'https://vk.com/images/camera_50.png', '', '1.1.1984', 0, '', 445503321, 0, 0);
+(1, 'blueKIT', 'tolik-tolik-99@mail.ru', '1a9058647f28ac1402a12963d9aa58b3', 0, '', '', '', '', '', 0, '', '0', '0', '0'),
+(2, 'joskyPasan', 'ya.tolik-a@yandex.ru', '4297f44b13955235245b2497399d7a93', 0, 'Толяша', 'Антоненко', '/1/2', 'Russian', '1999', 1, '', '0', '0', '0'),
+(3, 'mymandarinchik', 'mandarin.tolik.99@gmail.ru', '4297f44b13955235245b2497399d7a93', 0, 'Анатолий', 'Антоненко', '/1/3', 'Канада', '1999', 2, '', '0', '0', '0'),
+(4, 'anko', 'qweqwe@qweqw.qwe', '4297f44b13955235245b2497399d7a93', 0, 'Егор', '', '', '', '', 0, '2017-02-04 14:01:45', '0', '0', '0'),
+(5, 'InShala', 'a.tolik-aa@yanadex.ru', 'ad2c5a7094b9388c982df7649a44a637', 0, '', '', '', '', '', 0, '2017-05-14 02:19:09', '0', '0', '0'),
+(8, 'panchoVilla', 'dolby.crack@fail.com', '4297f44b13955235245b2497399d7a93', 0, '', '', '', '', '', 0, '2017-07-02 14:12:10', '0', '0', '0'),
+(39, '', '', '', 0, 'Имя', 'Фамилия', 'https://vk.com/images/camera_50.png', '', '1.1.1984', 0, '2017-09-26 21:20:46', '445503321', '0', '0'),
+(44, '', '', '', 0, 'Anatoliy', 'Antonenko', 'https://graph.facebook.com/v2.10/1951161481766986/picture?width=200&hight=200', '', '05/04/1999', 0, '2017-09-26 21:40:12', '', '1951161481766986', '');
 
 -- --------------------------------------------------------
 
@@ -647,7 +648,7 @@ ALTER TABLE `reviews`
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 --
 -- AUTO_INCREMENT для таблицы `u_blog`
 --
