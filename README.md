@@ -39,7 +39,7 @@
 ```
  git clone https://github.com/ankogit/phprun.git    //выкачать репозиторий
  git remote add origin https://github.com/ankogit/phprun.git   //Добавление удалённого репозитория 
- git branch develop      //выбрать ветку
+ git checkout develop    //выбрать ветку
 
  git status    //проверить статус
  git add .     //добавить всё изменения в коммит
