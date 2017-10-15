@@ -2,6 +2,7 @@
 top('Главная'); 
 $_SESSION['loader'] = 0;
 ?>
+<h1>Главная страница!</h1>
 <script type="text/javascript">
     
 function load_posts() {
