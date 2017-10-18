@@ -31,6 +31,7 @@ if ($module) {
     //если это вошедший
     if ($_SESSION['id'] == $info['id']) {
              echo '<br><br><a href="/profile">Изменить профиль</a><br><br>';
+			 include ('add-network.php');
              echo '<h2>Добавить пост:</h2><br>';
         echo '</div>';
     ?>
