@@ -1,8 +1,8 @@
-<? top('Login OK') ?>
+<?php top('Login OK') ?>
 
-<?include 'configOK.php';?>
+<?php include 'configOK.php';?>
 
-<?
+<?php
 if (!$_GET['code']) {
     exit ('error code');
 }
@@ -51,4 +51,4 @@ echo "</pre>";
 echo "Привет: ".$data['name'];
 ?>
 
-<? bottom() ?>
+<?php bottom() ?>

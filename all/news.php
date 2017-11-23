@@ -1,4 +1,4 @@
-<? //MessageSend(3, 'Bbbbb', '/login', 1); //оповещения
+<?php //MessageSend(3, 'Bbbbb', '/login', 1); //оповещения
 
 top('Главная');
 
@@ -59,7 +59,7 @@ if ($type_post == 'id' AND ctype_digit($page_post) && ($page_post > 0)) {
 <p><button onclick="post_query('articles', 'comment', 'id.subject')">Отправить</button></p>
 </form>
 <p>Комментарии:</p>
-<?
+<?php
 $query = mysql_query('SELECT `text`, `uid`, `id` FROM `comments` WHERE `pid` = '.$page_post.' ORDER BY `id` DESC');
 if ( !mysql_num_rows($query) ) echo 'Список комментариев пуст';
 while ( $row = mysql_fetch_assoc($query) ) {
@@ -126,9 +126,9 @@ else echo '(Проверенно)';
 
             <div class="container">
              <div class="row">
-<?PageSelector($Param4, $Param['page'], $Count);?>
+<?php PageSelector($Param4, $Param['page'], $Count);?>
 </div></div>
-<? bottom() ?>
+<?php bottom() ?>
 
 
 

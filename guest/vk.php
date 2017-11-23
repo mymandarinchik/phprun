@@ -1,8 +1,8 @@
-<? top('Login Vk') ?>
+<?php top('Login Vk') ?>
 
-<?include 'configVK.php';?>
+<?php include 'configVK.php';?>
 
-<?
+<?php
 if (!$_GET['code']) {
     exit ('error code');
 }
@@ -21,4 +21,4 @@ echo "</pre>";
 echo "Привет: ".$data_vk_auth[first_name]."";
 ?>
 
-<? bottom() ?>
+<?php bottom() ?>

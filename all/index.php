@@ -1,4 +1,4 @@
-<? 
+<?php 
 top('Главная'); 
 $_SESSION['loader'] = 0;
 ?>
@@ -53,4 +53,4 @@ $('#loaded_max').val(50);
 </div>
 <div id="loadingbar"></div>
 <button id="load_p" onclick="load_posts()">Ещё</button>
-<? bottom() ?>
+<?php bottom() ?>

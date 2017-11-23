@@ -1,4 +1,4 @@
-<? check_admin (); MessageShow(); top('Панель управления сайтом'); ?>
+<?php check_admin (); MessageShow(); top('Панель управления сайтом'); ?>
 <h1>Панель управления сайтом</h1>
 <div class="container">
             <div class="row">
@@ -13,7 +13,7 @@
                     <th>Комментарии</th>
                     <th>ФУНКЦИИ</th>
                   </tr>
-<?
+<?php
     $result = mysql_query("SELECT * FROM posts ") or die(mysql_error());
         //$gitem = mysql_fetch_array($result);
 
@@ -49,7 +49,7 @@
                     <th>Группа</th>
                     <th>ФУНКЦИИ</th>
                   </tr>
-<?
+<?php
     $result = mysql_query("SELECT * FROM users ") or die(mysql_error());
         //$gitem = mysql_fetch_array($result);
 
@@ -83,7 +83,7 @@
                     <th>Текст</th>
                     <th>ФУНКЦИИ</th>
                   </tr>
-<?
+<?php
     $result = mysql_query("SELECT * FROM comments ") or die(mysql_error());
         //$gitem = mysql_fetch_array($result);
 
@@ -114,7 +114,7 @@
                     <th>Категория</th>
                     <th>Аналог</th>
                   </tr>
-<?
+<?php
     $result = mysql_query("SELECT * FROM categories ") or die(mysql_error());
         //$gitem = mysql_fetch_array($result);
 
@@ -133,4 +133,4 @@
             }
 ?>
 </table>
-<? bottom(); ?>
+<?php bottom(); ?>

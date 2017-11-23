@@ -1,4 +1,4 @@
-<?
+<?php
 
 $name_web_site = "mandarinshow.ru"; //Название сайта
 $admin_email = "ya.tolik-a@yandex.ru"; //Почта админа

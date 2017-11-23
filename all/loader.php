@@ -1,4 +1,4 @@
-<? 
+<?php 
 
 $query = mysql_query('SELECT * FROM `posts` ORDER BY `id` DESC LIMIT '.$_SESSION['loader'].', 2');
 

@@ -1,4 +1,4 @@
-<? 
+<?php
 if ($Param) exit('error url'); 
 if ($module) {
     $module += 0;
@@ -40,7 +40,7 @@ if ($module) {
         <p><button onclick="post_query('addublog', 'ublog', 'subject')">Добавить</button> </p>
         </form> 
         
-        <?
+        <?php
         }
         echo '</div>
     </div>';
@@ -53,7 +53,7 @@ if ($module) {
             <p><input type="text" value="--Начат диалог--" id="subject" hidden></p>
             <p><button onclick="post_query('fsendmessage', 'firstmess', 'email.subject')">Начать Диалог</button> </p>
             </form> 
-            <?
+            <?php
         }
         else {
         $row_m =mysql_fetch_assoc($row_m);

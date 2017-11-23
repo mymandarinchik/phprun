@@ -1,4 +1,4 @@
-<? top('Отзывы'); MessageShow();?>
+<?php top('Отзывы'); MessageShow();?>
 
 
 
@@ -11,7 +11,7 @@
 <h1>Список отзывов</h1>
 
 
-<?
+<?php
 $query = mysql_query('SELECT `id`, `text`, `uid` FROM `reviews` ORDER BY `id` DESC');
 
 

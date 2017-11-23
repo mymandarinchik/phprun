@@ -1,4 +1,4 @@
-<?
+<?php
 $Count = mysql_query("SELECT COUNT(`id`) FROM `dialog` WHERE `recive` = $_SESSION[id] AND `status` = 0");
 if (empty($Count)) MessageSend(2, 'У вас нет новых сообщений', '', 0);
 else {
