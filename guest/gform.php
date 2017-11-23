@@ -1,4 +1,4 @@
-<?
+<?php
 function go_auth($data) {
     foreach ($data as $key => $value) 
         $_SESSION[$key] = $value;

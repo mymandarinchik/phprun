@@ -1,4 +1,4 @@
-<? top('Профайл')?>
+<?php top('Профайл')?>
 <script>
         $(document).ready(function () {             
             $("#upload_image").imageUpload("upload", {
@@ -26,11 +26,11 @@
 <p><input type="password" placeholder="Новый пароль" id="password"></p>
 <p>Защита входа по Email</p>
 <p><select id="protected">
-<?=str_replace('"'.$_SESSION['protected'].'"', '"'.$_SESSION['protected'].'" selected', '<option value="0">Подтверждение входа Выкл.</option><option value="1">Подтверждение входа Вкл.</option>')?>
+<?php=str_replace('"'.$_SESSION['protected'].'"', '"'.$_SESSION['protected'].'" selected', '<option value="0">Подтверждение входа Выкл.</option><option value="1">Подтверждение входа Вкл.</option>')?>
 </select></p>
 <p>Изменить аватар</p>
 <div class="u_avatar" style="width: 100px; height: 100px;">
-<? my_avatar(); ?>
+<?php my_avatar(); ?>
 </div>
 <p>
 <div id="upload_image">
@@ -39,4 +39,4 @@
 <p><button onclick="post_query('aform', 'edit', 'name.sur_name.country.year.password.protected')">Сохранить</button></p>
 </form>
 <br><p>*Для того, чтобы изменения вступили в силу, вам нужно перезайти.</p>
-<? bottom() ?>
+<?php bottom() ?>

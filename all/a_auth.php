@@ -1,4 +1,4 @@
-<? 
+<?php 
 
 if ($_POST['login_f']) {
     //captcha_valid();

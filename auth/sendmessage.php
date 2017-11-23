@@ -1,4 +1,4 @@
-<?
+<?php
     if ( $_POST['mess_f'] ) {
 global $CONNECT;
     $sender = $_POST['email'];

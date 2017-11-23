@@ -1,4 +1,4 @@
-<?
+<?php
 
 if ($_POST['comment_f']) {
     if ($_SESSION["id"]) {

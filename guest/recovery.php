@@ -1,4 +1,4 @@
-<? top('Восстановление пароля') ?>
+<?php top('Восстановление пароля') ?>
 
 <h1>Восстановление пароля</h1>
 
@@ -8,4 +8,4 @@
 <p><button onclick="post_query('gform', 'recovery', 'email.captcha')">Восстановить</button></p>
 </form>
 
-<? bottom() ?>
+<?php bottom() ?>

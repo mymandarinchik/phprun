@@ -1,4 +1,4 @@
-<?
+<?php
 if ($module) {
     $row = mysql_query("SELECT * FROM `dialog` WHERE `id` = $module") ;
     if (empty($row)) include '/error/page-404.php';
@@ -31,7 +31,7 @@ $_SESSION['module'] = $module;
 <div id="post_b">
     
 </div>
-<?
+<?php
 bottom();
     }
 } else {

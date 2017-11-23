@@ -1,4 +1,4 @@
-<? MessageShow();
+<?php MessageShow();
 top('Вход');
    include 'configVK.php';
    include 'configFB.php';
@@ -18,4 +18,4 @@ top('Вход');
 <br><a href="https://www.facebook.com/v2.10/dialog/oauth?client_id=<?=ID_FB?>&redirect_uri=<?=URL_FB?>&response_type=code&scope=public_profile,email,user_location" target="_blank">Login FB</a>
 
 <br><a href="https://connect.ok.ru/oauth/authorize?client_id=<?=ID_OK?>&scope=VALUABLE_ACCESS&response_type=code&redirect_uri=<?=URL_OK?>" target="_blank">Login OK</a>
-<? bottom() ?>
+<?php bottom() ?>

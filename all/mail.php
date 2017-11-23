@@ -1,4 +1,4 @@
-<? 
+<?php 
 
 if ($_POST['contact_f']) {
     email_valid();

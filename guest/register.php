@@ -1,4 +1,4 @@
-<? top('Регистрация') ?>
+<?php top('Регистрация') ?>
 
 <h1>Регистрация</h1>
 
@@ -10,4 +10,4 @@
 <p><button onclick="post_query('gform', 'register', 'email.password.rep_password.captcha')">Регистрация</button></p>
 </form>
 
-<? bottom() ?>
+<?php bottom() ?>

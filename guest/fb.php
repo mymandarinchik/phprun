@@ -1,8 +1,8 @@
-<? top('Login Fb') ?>
+<?php top('Login Fb') ?>
 
-<?include 'configFB.php';?>
+<?php include 'configFB.php';?>
 
-<?
+<?php
 if (!$_GET['code']) {
     exit ('error code');
 }
@@ -22,4 +22,4 @@ echo "Привет:".$data[name];
 
 ?>
 
-<? bottom() ?>
+<?php bottom() ?>

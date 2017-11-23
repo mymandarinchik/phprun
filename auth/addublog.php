@@ -1,4 +1,4 @@
-<? 
+<?php 
 
 if ($_POST['ublog_f']) {
     if ($_SESSION["id"]) {

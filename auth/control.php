@@ -1,4 +1,4 @@
-<? 
+<?php
 function delete($table, $id){ // функция удаления страниц 
     $sql = "DELETE FROM $table WHERE id='$id'"; 
     mysql_query($sql) or die (mysql_error()); 

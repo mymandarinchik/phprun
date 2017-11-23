@@ -1,4 +1,4 @@
-<?
+<?php
 
  $qmess = mysql_query("SELECT * FROM `message` WHERE `did` = $_SESSION[module] ORDER BY `id` DESC");
 

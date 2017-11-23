@@ -1,4 +1,4 @@
-<? 
+<?php 
 
 if ($_POST['reviews_f']) {
     if ($_SESSION["id"]) {
